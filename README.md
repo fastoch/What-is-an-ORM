@@ -69,11 +69,18 @@ Serveur > BDD > Table > Colonnes et Lignes
 
 ## SQL injection 
 
-### Définition
+src = 
+
+### Definition
+
+SQL injection is a form of cyberattack that exploits vulnerabilities in **web applications**.  
+Atackers are able to manipulate a **database** by injecting **malicious SQL queries** through **user inputs**.   
+
+## How does a SQL injection attack work?
 
 
 
-### Comment s'en prémunir ?
+### How to prevent them?
 
 
 
