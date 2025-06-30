@@ -4,7 +4,7 @@ src = https://www.freecodecamp.org/news/what-is-an-orm-the-meaning-of-object-rel
 
 ## Introduction
 
-Object Relational Mapping is a technique used to create a bridge between object-oriented programs and, in most cases, relational databases. 
+Object Relational Mapping is a technique used to create a bridge between object-oriented programs and relational databases. 
 In other words, we can see the ORM as the layer that connects OOP (object-oriented programming) to relational databases.  
 
 When interacting with a database using OOP languages, we have to perform different operations like creating, reading, updating,  
@@ -36,7 +36,17 @@ Most OOP languages have a variety of ORM tools that you can choose from.
 
 ## Advantages of using ORM tools
 
+- speeds up development time 
+- decreases the cost of development
+- handles the logic required to interact with databases
+- improves security: ORM tools are built to eliminate the possibility of SQL injection attacks
+- you write less code when using ORM tools than with SQL
 
+## Disadvantages of using ORM tools
+
+- learning how to use ORM tools can be time consuming
+- they are likely not going to perform better when very complex queries are involved
+- ORMs are generally slower than using SQL
 
 ---
 
@@ -60,6 +70,8 @@ Serveur > BDD > Table > Colonnes et Lignes
 ## SQL injection 
 
 ### Définition
+
+
 
 ### Comment s'en prémunir ?
 
