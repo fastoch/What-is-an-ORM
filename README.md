@@ -69,18 +69,51 @@ Serveur > BDD > Table > Colonnes et Lignes
 
 ## SQL injection 
 
-src = 
+src = www.youtube.com/watch?v=8XVHftQskxk
 
 ### Definition
 
 SQL injection is a form of cyberattack that exploits vulnerabilities in **web applications**.  
 Atackers are able to manipulate a **database** by injecting **malicious SQL queries** through **user inputs**.   
 
-## How does a SQL injection attack work?
+### How does a SQL injection attack work?
 
+Queries are used to retrieve or modify data from a database.  
+Attackers exploit vulnerable input fields by injecting malicious SQL code that alters the intended behavior of the query.  
 
+- Hackers first study the targeted database to understand its structure and behavior.
+- Then they craft a SQL query that the server interprets as a legitimate command
 
-### How to prevent them?
+### Basic Example
 
+Consider a website that has a search feature where users can look for products by entering keywords.  
+This website uses a SQL database to store product information.  
 
+In a secure scenario, the website would take the user's input, sanitize it, and construct a SQL query to fetch the relevant products.  
+For example: `SELECT * FROM products WHERE name LIKE '%entered_keyword%';`  
 
+Let's say an attacker wants to retrieve all products from the database.  
+In the search field, they enter ` OR '1'='1'; --`  
+
+The query becomes: `SELECT * FROM products WHERE name LIKE '%' OR '1'='1'; --%';`  
+- in this case, the attacker uses a single quote to close the existing string
+- followed by ` OR '1'='1'` to inject a new condition that is always true
+- the semicolon is used to terminate the statement
+- the double hyphen is used to comment out the remaining portion of the original query
+
+As a result, this query will retrieve all products from the database.  
+
+Of course, this example is simplified for educational purposes. In the real world, SQL injections are much more sophisticated.  
+
+### Types of SQL injection attacks
+
+- In-band SQLi: includes error-based and union-based attacks where attackers use the same channel to launch an attack and collect the results
+- inferential SQLi or Blind SQLi: involves sending data payloads to the DB server tp observe its response without directly seeing the results
+  - it can be either boolean-based or time-based
+- out-of-band SQLi: in cases where in-band SQLi is not possible, attackers leverage other channels, such as DNS or HTTP requests, to retrieve data from the DB
+
+### Detecting and preventing SQL injections
+
+- implement **input validation** and **parameterized queries**: validate and filter user input using an allowlist approach, and use parameterized queries to separate SQL code from user input.
+- perform **regular security scans** to identify and address potential vulnerabilities in your web app
+- keep all software up to date
